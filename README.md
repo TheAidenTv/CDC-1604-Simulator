@@ -1,6 +1,7 @@
 # CDC 1604 Simulator
 
 A simulator to emulate the CDC 1604 computer. 
+
 ![cdc_1604 c1959 102635877 lg](https://user-images.githubusercontent.com/58179546/220802944-0df441b0-dbed-4baf-ae75-776cef5f38b2.jpg)
 
 Details on the CDC 1604 can be found either on [Wikipedia](https://en.wikipedia.org/wiki/CDC_1604) or from the [CDC 1604 Manual](http://bitsavers.org/pdf/cdc/1604/018c_CDC1604_Manual.pdf)
