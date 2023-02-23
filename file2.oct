@@ -1,0 +1,15 @@
+03000				; Starting Octal Address
+
+50 2 04001	04 0 00001	; Enter to index register 2 04000 | Enter into Q, 1
+
+; Loop Starts
+
+12 2 00000	22 0 03004	; Load A with address in index register 2 | If A == 0, jump to 03004
+
+14 0 04000	20 0 04000	; Add A + 04000 to A | Store A in 04000
+
+51 2 00001	23 1 03001	; Increment index R2 | If Q != 0 (which it always will) jump to 03001
+
+; Loop Ends
+
+76 0 03000	00 0 00000	; Stop program and set PC to 03000 | NOP Instruction

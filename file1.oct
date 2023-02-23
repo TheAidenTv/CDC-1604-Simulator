@@ -1,0 +1,35 @@
+03001				; Starting octal address
+
+0000000000000003		; 03001 contains 3 (Octal)
+
+0000000000000004		; 03002 contains 4 (Octal)
+
+; Using the MUI instruction
+
+12 0 03001	24 0 03002 	; Load into A 03001 | Multiply A by 03002 (Result stored in QA)
+
+21 0 03100	20 0 03101	; Store Q to 03000 | Store A to 03001
+
+; Using the add k times method
+
+14 0 03001	20 0 03110	; Add 03001 to A | Store A in 03010
+
+73 0 03002	00 0 00000	; Subtracts 1 from 03002 into A | NOP Instruction
+
+00 0 00000 	00 0 00000	; NOP Instruction| NOP Instruction
+
+16 0 03002	23 2 03006	; Load into Q 03002 | If Q is positive jump to 03005
+
+15 0 03101	22 0 03013 	; A - M[03101] | Jump to 03013 if A is 0
+
+; Results do not match
+
+04 0 11111	21 0 03000	; Load Q with -1 | Store 03000 with Q
+
+76 0 03003	00 0 00000	; Stop program and return to 03003 | NOP Instruction
+
+; Results do match
+
+04 0 00001	21 0 03000	; Enter Q with 1 | Store 03000 with Q
+
+76 0 03003	00 0 00000	; Stop program and return to 03003 | NOP Instruction
